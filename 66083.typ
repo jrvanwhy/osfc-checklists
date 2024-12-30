@@ -20,6 +20,87 @@
 // Ground Checklists and Information page
 // -----------------------------------------------------------------------------
 #let ground_checklists_and_info = [
+	#checklist("Preflight", black,
+		checklist_group("Fluids"),
+		([Brakes], [AS NEEDED]),
+		([Magnetos], [OFF]),
+		([Fuel quantity], [CHECK VISUALLY]),
+		([Fuel sumps], [DRAIN], [Left wing, right wing, fuel strainer. Inspect
+			for contamination.]),
+		([Fuel filler caps], [SECURE]),
+		([Engine oil level], [CHECK], [Minimum 5 quarts]),
+		checklist_group("Cabin"),
+		([Pitot cover], [REMOVE]),
+		([POH], [ACCESSIBLE]),
+		([G1000 reference], [ACCESSIBLE]),
+		([Avionics (BUS 1 and BUS 2)], [OFF]),
+		([Master], [ON], [When the master switch is on,\ treat propeller as if
+			magnetos are\ on. Do not stand in arc of propeller.]),
+		([PFD], [VERIFY ON]),
+		([Fuel gauges], [CHECK QUANTITY]),
+		([OIL PRESSURE], [VERIFY SHOWN]),
+		([LOW VACUUM], [VERIFY SHOWN]),
+		([LOW FUEL], [VERIFY NOT SHOWN]),
+		([Avionics fans], [CHECK], [Avionics bus 1 ON, verify fan heard,
+			avionics bus 2 OFF. Avionics bus 2 ON, verify fan heard, avionics bus
+			2 OFF.]),
+		([Lights], [CHECK]),
+		([Flaps], [EXTEND]),
+		([Tach time], [RECORD]),
+		([Pitot heat], [ON], [Verify warm within 30 seconds]),
+		([Pitot heat], [OFF]),
+		([LOW VOLTS], [VERIFY SHOWN]),
+		([Master], [OFF]),
+		([Elevator trim], [TAKEOFF]),
+		([Fuel selector], [BOTH]),
+		([Alt static air], [OFF]),
+		([Fire extinguisher], [CHECK]),
+		([Control lock ], [REMOVE]),
+	)
+	#checklist("Preflight (continued)", black,
+		checklist_group("Empennage"),
+		([Autopilot static], [VERIFY CLEAR]),
+		([Rudder gust lock], [REMOVE]),
+		([Control surfaces], [CHECK], [Freedom of movement and security]),
+		([Trim tab], [CHECK SECURE]),
+		([Antennas], [CHECK CONDITION]),
+		checklist_group("Right"),
+		([Flap], [CHECK SECURE, CONDITION]),
+		([Main wheel tire], [CHECK INFLATION]),
+		([Aileron], [CHECK FREE, SECURE]),
+		checklist_group("Nose"),
+		([Cooling inlets], [VERIFY CLEAR]),
+		([Propeller], [CHECK FOR NICKS]),
+		([Spinner], [VERIFY SECURE]),
+		([Air filter], [CHECK CLEAR]),
+		([Nosewheel strut, tire], [CHECK]),
+		([Static source], [CHECK CLEAR]),
+		checklist_group("Left"),
+		([Main wheel tire], [CHECK INFLATION]),
+		([Fuel vent], [VERIFY CLEAR]),
+		([Pitot tube], [VERIFY CLEAR]),
+		([Stall warning], [TEST]),
+		([Landing, taxi lights], [CHECK CLEAN]),
+		([Aileron], [CHECK FREE, SECURE]),
+		([Flap], [CHECK SECURE, CONDITION]),
+		checklist_group("Final"),
+		([Weight and balance], [CHECKED]),
+		([Baggage door], [LOCK]),
+		([Tach, Hobbs times], [RECORD]),
+		([FlightCircle], [DISPATCH]),
+		([Chocks], [REMOVE]),
+		([Tie-downs], [REMOVE]),
+	)
+	#checklist("Securing", black,
+		([Control lock], [INSTALL]),
+		([Tie-downs, chocks], [APPLY]),
+		([Vents, windows], [CLOSE]),
+		([Pitot cover], [APPLY]),
+		([Fuel selector], [LEFT or RIGHT]),
+		([Tach, Hobbs times], [RECORD]),
+		([FlightCircle], [CHECK IN]),
+		([Doors], [LOCK]),
+	)
 ]
 
 // -----------------------------------------------------------------------------
@@ -338,14 +419,13 @@
 
 #set text(font: "DejaVu Sans")
 
-// TODO: Adjust margins on other checklists as well.
 #let margins = 5mm
 #page(flipped: true, margin: margins, paper: "us-letter")[
 	#columns(2, gutter: 2*margins)[
 		#set text(10pt)
 		= Ground Checklists and Information #h(1fr) N66083
 		#columns(2)[
-			#set text(6pt)
+			#set text(9.3pt)
 			#ground_checklists_and_info
 		]
 		#v(1fr)
