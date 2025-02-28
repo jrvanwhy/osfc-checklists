@@ -445,6 +445,9 @@
 
 #set text(fallback: false, font: "DejaVu Sans")
 
+#let centerline = place(center + horizon,
+	line(start: (0%, 0%), end: (0%, 100%), stroke: 0.1pt))
+
 #let heading_base_size = 10pt
 #let margins = 5mm
 #page(flipped: true, margin: margins, paper: "us-letter")[
@@ -469,6 +472,7 @@
 			#operating_checklists
 		]
 	]
+	#centerline
 ]
 #page(flipped: true, margin: margins, paper: "us-letter")[
 	#columns(2, gutter: 2*margins)[
@@ -489,4 +493,5 @@
 			#right_emergency_checklists
 		]
 	]
+	#centerline
 ]
